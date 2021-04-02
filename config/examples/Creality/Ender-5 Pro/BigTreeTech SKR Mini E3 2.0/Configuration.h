@@ -800,7 +800,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 320, 320, 3200, 406 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 640, 640, 6400, 410 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -2383,7 +2383,11 @@
 //#define DGUS_LCD_UI_ORIGIN
 //#define DGUS_LCD_UI_FYSETC
 //#define DGUS_LCD_UI_HIPRECY
-//#define DGUS_LCD_UI_MKS
+
+// #define DGUS_LCD_UI_MKS
+#if ENABLED(DGUS_LCD_UI_MKS)
+  #define USE_MKS_GREEN_UI
+#endif
 
 //
 // CR-6 OEM touch screen. A DWIN display with touch.
